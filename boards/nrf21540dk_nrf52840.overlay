@@ -13,9 +13,19 @@
 
 // Define additional devices connected to the board below:
 &i2c0 {
-    ioexpander:ioexpander@28{
+    // ioexpander:nRF52840@20{
+    //     compatible = "i2c-device"; //Raw I2C connection
+    //     reg = < 0x20 >;
+    //     label = "IOEXPANDER";
+    // };
+
+    adc:nRF52840@21{
         compatible = "i2c-device"; //Raw I2C connection
-        reg = < 0x28 >;
-        label = "IOEXPANDER";
+        reg = < 0x21 >;
+        label = "ADC";
     };
+};
+
+&spi0 {										/* m */
+	status = "disabled";					/* n */
 };
